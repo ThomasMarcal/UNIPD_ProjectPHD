@@ -1,4 +1,3 @@
-# Import necessary libraries for camera and BME280
 import camera
 import os
 import time
@@ -44,12 +43,9 @@ def connect_wifi(ssid, password):
 connect_wifi(ssid, password)
 
 
-
-# Camera initialization and functions
-
 def init_camera():
     try:
-        camera.init(0, format=camera.JPEG)  # Ajustez les paramètres si nécessaire
+        camera.init(0, format=camera.JPEG)
         print("Caméra initialisée avec succès")
         return True
     except Exception as e:
@@ -89,15 +85,15 @@ def main():
     camera.deinit()
     try:
         if init_camera():
-            allumer_flash()  # Turn on the flash
+            allumer_flash()
             photo = capture_photo()
-            eteindre_flash()  # Turn off the flash
+            eteindre_flash()
 
         if photo is not None:
             save_path = "photo.jpg"
             save_photo(photo, save_path)
 
-        camera.deinit()  # Deactivate the camera
+        camera.deinit()
     except Exception as camera_error:
         print("Camera error:", camera_error)
 

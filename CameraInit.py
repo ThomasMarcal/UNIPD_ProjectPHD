@@ -5,7 +5,7 @@ import machine
 
 def init_camera():
     try:
-        camera.init(0, format=camera.JPEG)  # Ajustez les paramètres si nécessaire
+        camera.init(0, format=camera.JPEG)
         print("Caméra initialisée avec succès")
         return True
     except Exception as e:
@@ -42,16 +42,15 @@ def eteindre_flash():
 def main():
     camera.deinit() 
     if init_camera():
-        allumer_flash()  # Allume le flash
+        allumer_flash()
         photo = capture_photo()
-        eteindre_flash()  # Eteint le flash
+        eteindre_flash()
 
         if photo is not None:
-        # Modifiez le chemin ci-dessous en fonction de votre système de fichiers
             save_path = "photo.jpg"
             save_photo(photo, save_path)
 
-        camera.deinit()  # Désactive la caméra
+        camera.deinit()
         
 if __name__ == "__main__":
     main()
