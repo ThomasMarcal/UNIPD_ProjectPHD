@@ -2,7 +2,7 @@ Project Title: IoT Environmental Monitoring and Surveillance Camera System
 
 
 ----------------------------------------------------------------------------------------------------
-Description:
+**<mark>Description :</mark>**
 
 This project integrates various IoT components to create a comprehensive environmental monitoring and surveillance system. It uses the ESP32 microcontroller, the ESP32-CAM module, and the BME280 sensor to gather environmental data and surveillance images, transmitting this information to a central server for processing and display.
 
