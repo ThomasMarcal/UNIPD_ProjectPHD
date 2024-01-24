@@ -1,4 +1,4 @@
-Project Title: IoT Environmental Monitoring and Surveillance Camera System
+**Project Title: IoT Environmental Monitoring and Surveillance Camera System**
 
 
 ----------------------------------------------------------------------------------------------------
@@ -9,22 +9,22 @@ This project integrates various IoT components to create a comprehensive environ
 ----------------------------------------------------------------------------------------------------
 **<mark>Components:</mark>**
 
-- BME280 Sensor Interface (BME280_Class.py):<br>
+- **BME280 Sensor Interface (BME280_Class.py):**<br>
         A Python class to interface with the BME280 sensor.
         Used for measuring temperature, humidity, and atmospheric pressure.
         Implements low-level I2C communication with the sensor.
 
-- ESP32 Data Logger (ESP32.py):<br>
+- **ESP32 Data Logger (ESP32.py):**<br>
         Script for ESP32 microcontroller.
         Connects to WiFi and sends environmental data from the BME280 sensor to a server via MQTT.
         Includes MQTT client setup and unique ID generation for the device.
 
-- ESP32-CAM Module (ESP32CAM.py):<br>
+- **ESP32-CAM Module (ESP32CAM.py):**<br>
         Python script for handling ESP32-CAM functionalities.
         Connects to WiFi and transmits camera data over the network.
         Uses MQTT for data transmission, with a focus on surveillance or monitoring.
 
-- Server-Side Application (folder SERVER_FINAL):<br>
+- **Server-Side Application (folder SERVER_FINAL):**<br>
         Flask web application to receive and display data.
         Handles incoming MQTT messages from both the ESP32 and ESP32-CAM.
         Processes and displays environmental data and images.
