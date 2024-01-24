@@ -41,6 +41,22 @@ This project integrates various IoT components to create a comprehensive environ
 - Deploy each script to its corresponding hardware (ESP32, ESP32-CAM).
 - Configure network settings (SSID and password) in ESP32 and ESP32-CAM scripts.
 
+----------------------------------------------------------------------------------------------------
+**<mark>Flashing the Camera:</mark>**
+
+To use the camera with our system, it is necessary to flash the appropriate firmware onto the ESP32-CAM module. We use the firmware available on lemariva's GitHub repository, which provides a camera driver compatible with MicroPython.
+Instructions:
+
+1. Visit the GitHub Repository:<br>
+    Go to lemariva/micropython-camera-driver to access the firmware and detailed instructions.
+
+2. Follow the Instructions:<br>
+    The repository contains detailed instructions on how to flash the firmware onto your ESP32-CAM module. Make sure to follow these instructions carefully.
+
+3. Test the Camera:<br>
+    After flashing, perform tests to confirm that the camera functions correctly with the new firmware.
+
+This firmware is crucial for ensuring the compatibility of the camera with our system and for fully leveraging its capabilities in our environmental surveillance and monitoring project.
 
 ----------------------------------------------------------------------------------------------------
 **<mark>Usage:</mark>**
