@@ -11,11 +11,11 @@ from mqtt.simple import MQTTClient
 ## Initialization
 
 # WiFi configuration
-WIFI_SSID = 'Thomas'
-WIFI_PASSWORD = 'portugal'
+WIFI_SSID = INSERT_SSID
+WIFI_PASSWORD = INSERT_PASSWORD
 
 # MQTT configuration
-MQTT_BROKER = '172.20.10.2'
+MQTT_BROKER = INSERT_IP_BROKER
 MQTT_PORT = 1883
 
 # Unique MQTT client ID based on the machine's unique ID
