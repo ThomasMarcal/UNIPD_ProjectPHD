@@ -21,6 +21,9 @@ MQTT_PORT = 1883
 # Unique MQTT client ID based on the machine's unique ID
 CLIENT_ID = ubinascii.hexlify(machine.unique_id())
 
+# MQTT topic for Camera
+CAM_TOPIC = 'home/cam'
+
 # MQTT topic for monitoring
 MONITORING_TOPIC = 'home/monitoring'
 
@@ -175,7 +178,7 @@ def main():
 
 	# Connect to the Wi-Fi network
 	connect_wifi(WIFI_SSID, WIFI_PASSWORD)
-
+	
 	# Create an instance of the Camera class
 	my_camera = Camera()
 	my_camera.deinit()
@@ -202,6 +205,7 @@ def main():
 	mqtt_client.connect()
 	mqtt_client.subscribe(MONITORING_TOPIC)
 
+	
 	while True:
 		mqtt_client.check_msg()
 
@@ -212,7 +216,7 @@ def main():
 				my_camera.save_photo(photo, save_path)
 				time.sleep(1)
 				binary_image = Camera.convert_image_to_binary(save_path)
-				publish_image_mqtt(binary_image, CLIENT_ID + "FLASH", MQTT_BROKER, MQTT_PORT, "home/cam")
+				publish_image_mqtt(binary_image, CLIENT_ID + "FLASH", MQTT_BROKER, MQTT_PORT, CAM_TOPIC)
 				time.sleep(2)
 				try:
 					os.remove(save_path)
@@ -220,7 +224,7 @@ def main():
 				except Exception as e:
 					print(f"Error deleting photo: {e}")
 		my_camera.deinit()
-		time.sleep(1)
+		time.sleep(2)
 
 
 ##################################################

@@ -81,7 +81,7 @@ def main():
 	
 	print("""
 	#################
-	ESP 32 CAM - CODE
+	ESP 32 - CODE
 	#################\n
 	""")
 	
